@@ -1,0 +1,30 @@
+For router 0 : 
+	router ospf 200
+	network 10.0.0.0 255.0.0.0 area 0
+	network 192.168.1.0 255.255.255.0 area 0
+	exit
+
+For router 1 : 
+	en
+	conf t
+	router ospf 200
+	network 192.168.1.0 255.255.255.0 area 0
+	network 20.0.0.0 255.0.0.0 area 0
+	network 150.150.150.0 255.255.255.0 area 1
+	
+For router 2 : 
+	ospf 200
+	network 150.150.150.0 255.255.255.0 area 1
+	exit
+	
+Open router 0
+	ENTER
+	exit
+	ENTER
+	show ip route
+	can you see here : it will take time...
+	just try sending packet
+	from 
+	
+	the lineof s in show ip route : 
+	O lines are of ospf

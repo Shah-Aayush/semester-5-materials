@@ -1,0 +1,42 @@
+fast ethernet
+
+10.0.0.1/28
+255.0.0.0
+
+serial connection
+1/0
+
+192.168.1.1/24
+
+
+router 2
+192.168.1.2
+0.1
+0/1 : 150.150.150.1
+ : 150.150.150.2
+pc0 : 10.0.0.1
+		gateway : 10.0.0.0
+pc1 : 10.0.0.2
+	10.0.0.0
+pc2 : 20.0.0.2
+	20.0.0.0
+pc3 : 20.0.0.3
+
+
+router 1
+	router rip
+	network 192.168.1.0
+	network 20.0.0.0
+	network 150.150.150.0
+	exit
+
+router 2
+	en
+	config terminal
+	router rip
+	network 150.150.150.0
+	exit
+	
+	en : show vlan brief
+	en : show ip route
+	

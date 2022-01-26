@@ -1,0 +1,527 @@
+%
+% File acl2015.tex
+%
+% Contact: car@ir.hit.edu.cn, gdzhou@suda.edu.cn
+%%
+%% Based on the style files for ACL-2014, which were, in turn,
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt]{article}
+\usepackage{acl2015}
+\usepackage{times}
+
+% \usepackage{url}
+% \usepackage{hyperref}
+\usepackage[spaces,hyphens]{url}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+
+\usepackage{tabularray}
+\usepackage{longtable}
+\usepackage{latexsym}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\usepackage[style=alphabetic,citestyle=alphabetic,backend=biber,backref=true]{biblatex}
+
+% REFERENCES
+\usepackage{filecontents}
+\defbibenvironment{bibliography}
+{\enumerate{}
+{\setlength{\leftmargin}{\bibhang}%
+\setlength{\itemindent}{-\leftmargin}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}}
+{\endenumerate}
+{\item}
+\begin{filecontents}{bib}
+@misc{hackernoon,
+ author = {1},
+  howpublished = "\url{https://hackernoon.com/9-popular-cross-platform-tools-for-app-development-in-2019-53765004761b}",
+}
+
+\end{filecontents}
+% for back reference in bibliography
+\usepackage[style=alphabetic,citestyle=alphabetic,backend=biber,backref=true]{biblatex}
+\addbibresource{bib}
+
+%\setlength\titlebox{5cm}
+
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+
+\title{\huge Cross-Platform Development Tools}
+
+\author{Aayush Shah \\
+  \emph{Computer Science Department} \\
+  \emph{Institute of Technology, Nirma Uni.} \\
+  \emph{Ahemdabad 382 481, India} \\
+  {\href{mailto:19bce245@nirmauni.ac.in?subject=Came-from-SE-Term-paper}{19bce245@nirmauni.ac.in}} \\\And
+  Devansh Shah \\
+  \emph{Computer Science Department} \\
+ \emph{Institute of Technology, Nirma Uni.} \\
+  \emph{Ahemdabad 382 481, India} \\
+  {\href{mailto:19bce247@nirmauni.ac.in?subject=Came-from-SE-Term-paper}{19bce247@nirmauni.ac.in}} \\}
+
+\date{}
+
+\begin{document}
+\maketitle
+\textbf{\emph{Abstract}}
+  \textbf{The solution to the challenge of cross-platform development for today's developers is described in this paper. It goes over why we need cross-platform development, the benefits, drawbacks, and problems of doing so, as well as the pros, cons, and verdict for a few cross-platform development tools so you can figure out which one to use for which application.}
+  
+  \textbf{\emph{Keywords} - Cross-Platform, Cross-Platform tools, Different Platforms}
+  
+  
+
+\section{Introduction}
+
+The activity of building software products or services for several platforms or software environments is known as cross-platform development. It is a method for generating programming products or administrations that can be used in a variety of stages or programming situations. Designers and developers use a variety of techniques to teach distinct working frameworks and climates for a single application.
+
+Cross-platform development is based on the idea that a product or software application should be able to work well in multiple digital environments. This is done in order to market programming for more than one restricted functioning framework stage, such as to compel use on both Microsoft and Apple platforms, or Android, Blackberry, and iOS. Cross-platform programming is growing, rising, and vital to study and use with the expansion of mobile technology and the investigation of open-source advancements like Linux.\cite{hackernoon}
+
+The following are the key goals of this review paper:
+
+\begin{itemize}
+%   \renewcommand{\baselinestretch}{1.0}
+  \setlength{\itemsep}{0mm}  
+  \item Becoming acquainted with the notion of cross-platform development tools
+  \item The difference between cross-platform and native development tools
+  \item Choosing the best tool for the required task
+  \item The benefits and drawbacks of using cross-platform development tools
+  \item Issues with cross-platform development tools
+\end{itemize}
+
+\section{Differences between Native and Cross-Platform development}
+
+Native vs. cross development is very hot debate
+and tech community has not still come to conclusion. Some
+are the in favors of native app whereas some support cross-platform development.Both native and cross-platform app
+development technology are in a steady kingdom of
+evolution. This converting nature of technology indicators
+that those subjects must be revisited and then to test which
+of those alternatives is presently main the game.
+
+The difference between native and cross-platform
+development app is given below: 
+\begin{longtblr}[
+  caption = {Native and Cross-platform app comparison},
+  label = {tab:test},
+]{
+  colspec = {|XX[1]|},
+%   rowhead = 1,
+  hlines,
+} 
+
+\textbf{Native Apps}& \textbf{Cross-platform apps}\\
+It involves high cost for development & It includes lesser amount of cost for development  \\
+It codes on a single platform  & It codes on a multiple platform, which is easy to use\\
+Without any traffic, Platform SDK able to access to device’s API & Not able to access all the device’s API’s  \\
+Consistent with the UI components of the device.& It has lower consistency with the UI Components  \\
+Flawless performance, when theapp is developed for the devices OS & It has high performance however lags and hardware compatibility problems are common\\
+\end{longtblr}
+
+
+\section{Selecting the most appropriate tool}
+
+With so many options to consider, it may be difficult to narrow down which ones are the finest.\par
+When making a decision, the four primary elements listed below should be taken into account.
+
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Speed Considerations
+  \item Feature Support
+  \item Framework Risk
+  \item Development Cost
+\end{itemize}
+
+For cross-platform development tools, analyzing these elements is very crucial.
+
+
+% REMOVE THIS AFTER TESTING  ||  START
+\section{SAMPLE FOR TESTING}
+
+With\cite{hackernoon} so many options\cite{shah} to consider, it may be difficult to narrow down which ones are the finest.\par
+When making a decision\cite{aayush}, the four primary elements listed below should be taken into account.\cite{Gusfield}
+
+
+
+\title{Bibliographies with biber and biblatex}
+\author{Frank the Giant Bunny}
+\date{August 27, 2014}
+\maketitle
+
+Nunc auctor nunc in nisi suscipit tempus \cite{black1973poa}.
+
+
+% REMOVE THIS AFTER TESTING  ||  CLOSE
+
+
+
+\section{Development Tools}
+
+
+\subsection{Flutter}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Adobe PhoneGap}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Appcelerator Titanium}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Cocos2d}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Unity3D}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Sencha}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Qt}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Corona}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+
+\subsection{Alpha Anywhere}
+
+Sample text here
+Sample text here
+Sample text here
+Sample text here
+Sample text here \par
+
+\emph{Pros}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Cons}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+\par
+\emph{Verdict}
+\begin{itemize}
+  \setlength{\itemsep}{0mm}  
+  \item Sample text
+  \item Sample text
+  \item Sample text
+  \item Sample text
+\end{itemize}
+
+\subsection{Format of Electronic Manuscript}
+\label{sect:pdf}
+
+
+
+
+
+\section*{Acknowledgments}
+
+The acknowledgments should go immediately before the references.  Do
+not number the acknowledgments section. Do not include this section
+when submitting your paper for review.
+
+% include your own bib file like this:
+%\bibliographystyle{acl}
+%\bibliography{acl2015}
+
+
+
+
+% bibliography
+\printbibliography
+
+
+\end{document}

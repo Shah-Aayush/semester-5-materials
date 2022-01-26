@@ -1,0 +1,40 @@
+actor student
+
+participant Authentication
+participant Requests
+participant Sessions
+actor faculty
+participant Database
+
+activate student
+student->>Authentication: **1** sign_in_auth()
+activate Authentication
+student<<--Authentication: **2** Successfully authenticated
+
+Authentication->>Requests : **3** request_menu()
+activate Requests
+Authentication<<--Requests: **4** Show request menu
+deactivate Authentication
+
+Requests->>Requests: **5** remove_request()
+Requests->>Requests: **6** upvote_request()
+Requests->>Sessions: **7** add_request()
+activate Sessions
+
+Sessions->>Sessions: **8** get_session_info(session_id)
+Sessions->>Sessions: **9**  is_threshold_reached(number_of_student)
+Sessions->>faculty:  **10** send_notification_to_faculty(requested_faculty)
+activate faculty
+faculty->>faculty: **11** approve_request(session_id)
+Sessions<<--faculty: **11** Session status
+faculty->>Database: **12** schedule_session(session_id)
+activate Database
+faculty->>faculty: **13** reject_request(session_id)
+deactivate faculty
+Sessions->>Sessions: **14** get_session_status(session_id)
+Requests<<--Sessions: **15** show request data
+deactivate Sessions
+deactivate Requests
+student<<--Database: **16** inform_registered_students()
+deactivate Database
+deactivate student

@@ -1,0 +1,24 @@
+actor student
+
+participant Auth
+participant Google/GitHub auth
+participant Database
+
+student->>Auth: **1** Clicks on Auth menu
+activate Auth
+Auth->>Auth: **2** sign_in_auth(email_id)
+Auth->>Auth: **3** sign_up_auth(email_id)
+Auth->>Google/GitHub auth:  **1** validateUser(email_id)
+activate Google/GitHub auth
+Google/GitHub auth->>Google/GitHub auth: **4** perform_google_auth()
+Google/GitHub auth->>Google/GitHub auth: **5** perform_github_auth()
+Google/GitHub auth->>Database: **6** get_user_info()
+activate Database
+Google/GitHub auth<<--Database: **7** Show user information
+deactivate Database
+Google/GitHub auth->>Google/GitHub auth: **8** logout(email_id)
+Google/GitHub auth->>Google/GitHub auth: **9** remove_auth(email_id)
+Google/GitHub auth->>Google/GitHub auth: **10** get_auth_type(email_id)
+Auth<<--Google/GitHub auth: **11** result
+deactivate Google/GitHub auth
+student<<--Auth:Show message

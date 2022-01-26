@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "6915cc8d42a88d40",
+    "type": "split",
+    "children": [
+      {
+        "id": "a97d88f160135449",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Student Helper Portal.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e40d854c012ef6b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "09ab0f5f5d6ea2b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f4a970d64e289b99",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "5ced3291a08ff2a8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bbe43222370fd4f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c1c813abaa38b48",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8db19a84b93bb450",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Student Helper Portal.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "a97d88f160135449",
+  "lastOpenFiles": [
+    "Student Helper Portal.md"
+  ]
+}

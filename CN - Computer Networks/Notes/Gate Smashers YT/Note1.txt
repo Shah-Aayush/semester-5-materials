@@ -1,0 +1,114 @@
+Syllabus :
+
+	Physical layer - Cables, Topology, Transmission modes, Encoding,  LAN Devices, Modulation
+	Data link - Stop & wait, Go back and Selective Repeat, MAC Protocols, Switching Error Control, Ethernet frame format
+	Network - IP addressing, Routing Protocols, IPV4 header, IPV6 header
+	Transport - TCP, UDP, Headers
+	Session
+	Presentation
+	Application
+	Network Security
+	
+	All syllabus is depended on OSI's 7 layers.
+	
+Computer Network
+	
+	Sender  -->  Receiver
+		 connection
+		
+	- protocol : set of instructions.
+	- proper communications is happened when there is protocol at both sender and receiver machines.
+	- Client and servers are present on different machines then there will be Computer Networks concept.
+	
+	> Functionalities : 
+		1. Mandatory
+			Error control : Accuracy of data
+			Flow control : Amount of data; there should be some kind of limitations;
+			Multiplexing & Demultiplexing : Multiple processes and their data segregation		ETC.
+			
+		2. Optional
+			Encryption & Decryption : Cryptography
+				- this increases complexity!
+			Check point : When downloading data, at some point there should be a checkpoint in between.
+				- not required for small data like whats-app chats.		ETC.
+			
+		>> OSI model defines all these functionalities into one concrete bundle.
+			Open System Interconnection :
+				Application layer
+				Presentation layer
+				Session layer
+				Transport layer
+				Network layer
+				Data link layer
+				Physical layer
+			
+			
+TCP/IP protocol suite : 
+
+	TCP/IP protocol suite or Internet protocol
+	Developed by ARPANET
+	Support client-server 	//one server serves many clients
+	and 
+	peer to peer			//distributed way data transfer
+	
+	5 layer TCP/IP		|| 			OSI 			|| 		4 Layer TCP/IP
+	
+	Application layer		Application layer			Application layer	: Process to Process
+							Presentation layer
+							Session layer
+										
+	Transport layer			Transport layer				Transport layer		: Host to Host					| DATA
+	
+	Network  layer 			Network layer				Internet layer 		: Source to destination			| TERM
+	
+	Data link layer			Data link layer				Network Access layer: Node to Node					| SEGMENT
+	
+	Physical layer			Physical layer
+	
+	> OSI model is a fundamental model which is theoretical model.
+	> TCP/IP is an implementation/practical based model.
+		TCP - Transmission Control Protocol 
+		IP - Internet Protocol
+		
+		
+Physical layer  and its functionalities : [sender:LAST; receiver:FIRST]
+	
+	Cables and connections	(UTP,RTG etc. type connectors)
+	Physical topology		(Star, mesh, bus topology configuration)
+	Hardwares (Repeaters: If noise interrupted	or signal attenuation happended and we have to gain original level then this will be used., Hubs:used for multi point connections.)
+	Transmission mode	(Simplex transmission (tv type), half duplex, full duplex)
+	Multiplexing		(Channel used : wire or wireless; dividing frequency to send multiple signals simultaneously. no collision, time division and wave division.)
+	Encoding			(different types of encoding. analog to digital or digital to analog)
+	
+	>bits form data converted into signals here!	|| SENDER SIDE
+	>signals converted into bits here!				|| RECEIVER SIDE
+	
+	
+Topology
+	
+	Mesh
+		All devices are connected with each other.
+		no of cables	=> nC2		where n = number of nodes
+		no of ports		=> 	n-1	on each device		{wires when device connects; TOTAL PORTS : n*(n-1)}
+		Reliability		=>	HIGH					{If any failure  happens then will system stop? no here multiple options are present. so there is more reliability than any other topology}
+		Cost			=> 	HIGH					{depends uppon cables}
+		Security		=> HIGH						{one node can communicate with another directly so there is more security}
+		
+		Maintenance will be high.
+		It supports point to point communication or dedicated communication.
+		
+	Star
+		no of cables	=> n		where n = number of nodes
+		no of ports		=> 	1	on each device		{wires when device connects; TOTAL PORTS : n}
+		Reliability		=>	NONE					{If there is failure in hub then communication b/w all the nodes will be stopped}
+		Cost			=> 	NORMAL					{lower than MESH}
+		Security		=> LESS						{Can be manually applied but ususally by default there is no security}
+		
+		Star has one centralized multi-port device.
+		It supports point to point communication or dedicated communication.
+		
+		
+	Bus
+	Ring
+	Hybrid
+	

@@ -1,0 +1,104 @@
+>Algorithms vs Program
+
+	Design - Implementation
+	anyone who has Domain knowledge can do - anyone who is Programmer can do
+	can be written in any language [eng/spanish/french/hindi/guj] - can only be written in programming languages [c/cpp/java/python]
+	Hardware, Software and OS independent - Hardware, Software and OS dependent
+	can be Analyzed - can be tested
+
+>Priori Analysis vs Posteriori Testing
+
+	can be done on Algorithms - can be done on Programs
+	Independent of language - Language dependent
+	Hardware Independent - Hardware dependent
+	Time & Space function - Watch time & Bytes
+	
+>Characteristics of Algorithms
+	
+	Input			[algorithms can take 0 or more inputs]
+	Output			[algorithms must generate atleast 1 output]
+	definiteness	[Every statement should be definite: should have only one exact meaning; known steps are to be perfomed]
+	Finiteness		[Algorithms must terminate at some point; It must stop]
+	Effectiveness	[Don't write unneccessary statements]
+	
+	
+-> Declaration and datatypes are not bothered at writing Algorithms 
+
+>How to analyze an Algorithm
+	
+	Time
+	Space
+	->Further more criteria on personal basis : 
+		Data network transfer
+		Power consumption
+		CPU registers (Device drivers or system level programming algorithms)
+		
+>Frequency Count Method
+	-sum of array of all elements : 
+		Algorithm sum(a,n){
+			s=0;					// 1 unit time taken.
+			for(i=0;i<n;i++){		// 1,n+1,n unit time taken by respective statements => so here let us consider only n+1 time and exclude the i<n comparision.
+				s=s+A[i];			// 1 unit time taken.
+			}
+			return s;				// 1 unit time taken.
+		}
+		
+		will execute in : f(n)=2n+3
+		Time Complexity : O(n)			//degree of above polynomial
+		
+		Space complexity : 
+			A - n
+			n - 1
+			s - 1
+			i - 1
+			TOTAL : n+3 => O(n) [order of n]
+		
+	-sum of two square matrices of dimension n : 
+		Algorithm Add(A,B,n){
+			for(i=0;i<n;i++){						// n+1 time
+				for(j=0;j<n;j++){					// n * (n+1) : as first it will execute for n times as it is children of outer for loop  but as we count it's own  iteration then it will run for n+1 times!
+					c[i,j] = A[i,j] + B[i,j];		// n * n
+				}
+			}
+		}
+		
+		Time complexity function f(n)=2n^2 + 2n + 1
+			=> O(n^2) //order of n square / degree.
+		
+		Space complexity 
+			A - n^2
+			B - n^2
+			C - n^2
+			n - 1
+			i - 1
+			j - 1
+			TOTAL  : 3n^2 + 3
+			=> O(n^2)
+			
+	-Multiplications of two matrices:
+		Algorithms Multiply(A,B,n){		
+			for (i=0;i<n;i++){									//n+1
+				for  (j=0;j<n;j++){								//n * n+1
+					c[i,j]=0;									//n * n 
+					for (k=0;k<n;k++){							//n * n * n+1
+						c[i,j] = c[i,j] + A[i,k]*B[k,j];		//n * n * n
+					}
+				}
+			}
+		}
+		
+		Time complexity : f(n) = 2n^3 + 3n^2 + 2n + 1
+			=> O(n^3)
+		
+		Space complexity : 
+			A - n^2
+			B - n^2
+			C - n^2
+			n - 1
+			i - 1
+			j - 1
+			k - 1
+			TOTAL S(n) = 3n^2+4
+				=> O(n^2)
+	
+	

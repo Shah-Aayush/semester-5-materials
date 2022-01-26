@@ -1,0 +1,25 @@
+Consider the following subnetted Class A network: 10.0.0.0 255.255.248.0
+How many new networks were created?
+How many usable hosts are there per network?
+What is the full range of the first three networks?
+
+By default, the 10.0.0.0 network has a subnet mask of 255.0.0.0. To
+determine the number of bits stolen:
+255.0.0.0: 		11111111.00000000.00000000.00000000
+255.255.248.0: 	11111111.11111111.11111000.00000000
+Clearly, 13 bits have been stolen to create the new subnet mask. To calculate
+the total number of new networks:
+2^n = 2^13 = 8192 new networks created
+There are clearly 11 bits remaining in the host portion of the mask:
+2^n – 2 = 2^11 – 2 = 2048 – 2 = 2046 usable hosts per network
+Calculating the ranges is a bit tricky. Using the shortcut method, subtract the
+third octet (248) of the subnet mask (255.255.248.0) from 256.
+256 – 248 = 8
+The first network will begin at 0, again. However, the ranges are spread across multiple octets. The ranges of the first three networks look as follows:
+Subnet address 		10.0.0.0 		10.0.8.0 		10.0.16.0
+					10.0.0.1		10.0.8.1		10.0.16.1
+				
+Usable Range
+
+					10.0.7.254		10.0.15.254		10.0.23.254
+Broadcast address 	10.0.7.255 		10.0.15.255 	10.0.23.255

@@ -1,0 +1,20 @@
+actor student
+
+participant Login Screen
+participant google/github auth
+participant database
+
+student->Login Screen:Clicks on login
+activate Login Screen
+Login Screen->google/github auth:validate(userid.email)
+
+activate google/github auth
+google/github auth->database:checkUserDetails
+activate database
+google/github auth<<--database:UserDetail
+deactivate database
+google/github auth->google/github auth:validateUser(i)
+Login Screen<<--google/github auth:result
+deactivate google/github auth
+student<<--Login Screen:showMessage
+

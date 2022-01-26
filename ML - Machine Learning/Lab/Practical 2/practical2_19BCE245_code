@@ -1,0 +1,267 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "19BCE245_Prac2.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hNzcB3hI83cb"
+      },
+      "source": [
+        "Date: **18th August, 2021**\n",
+        "\n",
+        "Roll No.: **19BCE245**\n",
+        "\n",
+        "Name : **Aayush Shah**\n",
+        "\n",
+        "Course Code and Name: **2CS501 MACHINE LEARNING**\n",
+        "\n",
+        "Practical: **2**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HOljoF3RPiwr",
+        "outputId": "70e181ce-7104-42ce-889d-4bad83a8d5b7"
+      },
+      "source": [
+        "pip install camelot-py[cv] tabula-py[cv]"
+      ],
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Requirement already satisfied: camelot-py[cv] in /usr/local/lib/python3.7/dist-packages (0.10.1)\n",
+            "Requirement already satisfied: tabula-py[cv] in /usr/local/lib/python3.7/dist-packages (2.2.0)\n",
+            "Requirement already satisfied: numpy>=1.13.3 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (1.19.5)\n",
+            "Requirement already satisfied: click>=6.7 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (7.1.2)\n",
+            "Requirement already satisfied: PyPDF2>=1.26.0 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (1.26.0)\n",
+            "Requirement already satisfied: pdfminer.six>=20200726 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (20201018)\n",
+            "Requirement already satisfied: openpyxl>=2.5.8 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (2.5.9)\n",
+            "Requirement already satisfied: tabulate>=0.8.9 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (0.8.9)\n",
+            "Requirement already satisfied: chardet>=3.0.4 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (3.0.4)\n",
+            "Requirement already satisfied: pandas>=0.23.4 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (1.1.5)\n",
+            "Requirement already satisfied: pdftopng>=0.2.3 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (0.2.3)\n",
+            "Requirement already satisfied: ghostscript>=0.7 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (0.7)\n",
+            "Requirement already satisfied: opencv-python>=3.4.2.17 in /usr/local/lib/python3.7/dist-packages (from camelot-py[cv]) (4.1.2.30)\n",
+            "Requirement already satisfied: setuptools>=38.6.0 in /usr/local/lib/python3.7/dist-packages (from ghostscript>=0.7->camelot-py[cv]) (57.4.0)\n",
+            "Requirement already satisfied: jdcal in /usr/local/lib/python3.7/dist-packages (from openpyxl>=2.5.8->camelot-py[cv]) (1.4.1)\n",
+            "Requirement already satisfied: et-xmlfile in /usr/local/lib/python3.7/dist-packages (from openpyxl>=2.5.8->camelot-py[cv]) (1.1.0)\n",
+            "Requirement already satisfied: pytz>=2017.2 in /usr/local/lib/python3.7/dist-packages (from pandas>=0.23.4->camelot-py[cv]) (2018.9)\n",
+            "Requirement already satisfied: python-dateutil>=2.7.3 in /usr/local/lib/python3.7/dist-packages (from pandas>=0.23.4->camelot-py[cv]) (2.8.2)\n",
+            "Requirement already satisfied: cryptography in /usr/local/lib/python3.7/dist-packages (from pdfminer.six>=20200726->camelot-py[cv]) (3.4.7)\n",
+            "Requirement already satisfied: sortedcontainers in /usr/local/lib/python3.7/dist-packages (from pdfminer.six>=20200726->camelot-py[cv]) (2.4.0)\n",
+            "Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.7/dist-packages (from python-dateutil>=2.7.3->pandas>=0.23.4->camelot-py[cv]) (1.15.0)\n",
+            "Requirement already satisfied: cffi>=1.12 in /usr/local/lib/python3.7/dist-packages (from cryptography->pdfminer.six>=20200726->camelot-py[cv]) (1.14.6)\n",
+            "Requirement already satisfied: pycparser in /usr/local/lib/python3.7/dist-packages (from cffi>=1.12->cryptography->pdfminer.six>=20200726->camelot-py[cv]) (2.20)\n",
+            "\u001b[33mWARNING: tabula-py 2.2.0 does not provide the extra 'cv'\u001b[0m\n",
+            "Requirement already satisfied: distro in /usr/local/lib/python3.7/dist-packages (from tabula-py[cv]) (1.6.0)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "M9SxrVxYQHbK",
+        "outputId": "caf457aa-c82f-40cb-8a1b-1adc31fb0821"
+      },
+      "source": [
+        "!sudo apt install ghostscript"
+      ],
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Reading package lists... Done\n",
+            "Building dependency tree       \n",
+            "Reading state information... Done\n",
+            "ghostscript is already the newest version (9.26~dfsg+0-0ubuntu0.18.04.14).\n",
+            "The following package was automatically installed and is no longer required:\n",
+            "  libnvidia-common-460\n",
+            "Use 'sudo apt autoremove' to remove it.\n",
+            "0 upgraded, 0 newly installed, 0 to remove and 40 not upgraded.\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OyfYwD1_QJM7"
+      },
+      "source": [
+        "import camelot\n",
+        "tables = camelot.read_pdf('apple_report_q1.pdf')"
+      ],
+      "execution_count": 32,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xiVwccsMQd1U",
+        "outputId": "a9102cda-0b68-4adb-8e8f-f19a82f23982"
+      },
+      "source": [
+        "tables"
+      ],
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<TableList n=1>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yZ8Bbf705OlT",
+        "outputId": "abff0e94-7946-4ae1-8130-f07815b6e6da"
+      },
+      "source": [
+        "tables[0]"
+      ],
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<Table shape=(28, 3)>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 34
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ucm_yIz25b2Y"
+      },
+      "source": [
+        "tables.export('web_report.html',f='html')"
+      ],
+      "execution_count": 35,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Bj0GGuaA5iME"
+      },
+      "source": [
+        "tables[0].to_html('web_report_1.html')\n",
+        "tables[0].to_json('json_report.json')\n",
+        "tables[0].to_excel('excel_report.xlsx')\n",
+        "tables[0].to_sqlite('sql_report.sqlite')"
+      ],
+      "execution_count": 36,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Vp8pMVFPQod8"
+      },
+      "source": [
+        "import tabula\n",
+        "tables_2 = tabula.read_pdf(\"apple_report_q1.pdf\", pages='all')"
+      ],
+      "execution_count": 37,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DRlhoGAeYp01",
+        "outputId": "9c46c47d-ff19-4efe-e74c-846a835c009f"
+      },
+      "source": [
+        "tables_2"
+      ],
+      "execution_count": 38,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[                                           Apple Inc.\n",
+              " 0   CONDENSED CONSOLIDATED STATEMENTS OF OPERATION...\n",
+              " 1   (In millions, except number of shares which ar...\n",
+              " 2                                  Three months ended\n",
+              " 3                 December 26, 2020 December 28, 2019\n",
+              " 4                                           Net sales\n",
+              " 5                              Products 95.678 79.104\n",
+              " 6                              Services 15,761 12,715\n",
+              " 7                     Total net sales 1,11,439 91,819\n",
+              " 8                      Operating Income 33,534 25,569\n",
+              " 9                   Other income/ expense, net 45 349\n",
+              " 10  Income before provision for income taxes 33,57...\n",
+              " 11             Provision for income taxes 4,824 3,682\n",
+              " 12                           Net income 28,755 22,236\n",
+              " 13                                 Earnings per share\n",
+              " 14                                    Basic 1.70 1.26\n",
+              " 15                                  Diluted 1.68 1.25\n",
+              " 16        Shares used in computing earnings per share\n",
+              " 17                      Basic 1,69,35,119 1,76,60,160\n",
+              " 18                    Diluted 1,71,13,688 1,78,18,417\n",
+              " 19                  Net sales by reportable segment :\n",
+              " 20                             Americas 46,310 41,367\n",
+              " 21                               Europe 27,306 23,273\n",
+              " 22                        Greater China 21,313 13,578\n",
+              " 23                                  Japan 8,225 7,378\n",
+              " 24                   Rest of Asia pacific 8,225 7,378\n",
+              " 25                    Total net sales 1,11,439 91,819]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 38
+        }
+      ]
+    }
+  ]
+}
