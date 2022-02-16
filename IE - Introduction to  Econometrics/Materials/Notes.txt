@@ -1,0 +1,20 @@
+What is econometrics ?
+
+->	Econometrics is the quantitative application of statistical and mathematical models using data to develop theories or test existing hypotheses 
+in economics and to forecast future trends from historical data. It subjects real-world data to statistical trials and then compares and contrasts 
+the results against the theory or theories being tested.
+->	Econometrics is concerned with the empirical determination of economic laws.
+
+METHODOLOGY OF ECONOMETRICS
+
+Broadly speaking, traditional econometric methodology proceeds along
+the following steps:
+
+1. Statement of theory or hypothesis.
+2. Specification of the mathematical model of the theory
+3. Specification of the statistical, or econometric, model
+4. Obtaining the data
+5. Estimation of the parameters of the econometric model
+6. Hypothesis testing
+7. Forecasting or prediction
+8. Using the model for control or policy purposes

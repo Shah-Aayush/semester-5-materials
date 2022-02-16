@@ -1,0 +1,37 @@
+steps involved in econometrics
+
+
+Population Regression functions (PRF) : It considers all the elemetns to be studied.
+
+
+Sample Regression Function (SRF) : It considers only some elements.
+
+
+Linear Regression : Linear mean it should linear in parameter may or may not be linear in variable.
+
+	Linear Y = B1 + B2X1 + u(e)
+	
+
+
+10 IMP assumptions of Classical Regression Model.
+
+
+
+R square value always lies between 0  and 1
+
+
+
+
+
+Chapter 10 Multicollinerality what happens if regressors are correlated! (Damodar Book)
+
+Go through all the topics but some important I have listed here :
+
+-> What are the sources of MultiCollinearity (Page 373 of PDF)
+-> 
+
+->Topic 10.7 DETECTION OF MULTICOLLINEARITY (Page 387)
+->Topic 10.8 REMEDIAL MEASURES
+
+
+Chapter 11 and 12
