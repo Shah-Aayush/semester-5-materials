@@ -167,7 +167,7 @@ int main(){
   }
   fclose(filePointer);
   
-  mkdir("sorted",0777); //created directory named sorted
+  mkdir("sorted",0777); // created directory named sorted
   
   int size;
   int counter = 0;

@@ -57,6 +57,14 @@ int lcs( char *X, char *Y, int m, int n )
 	}
 	printf("\t> Longest Common Subsequence : %s.\n",lcs);
 
+
+	for (int i=0; i<=m; i++) {
+		for (int j=0; j<=n; j++) {
+			printf("%3d ",L[i][j]);
+		}
+		printf("\n");
+	}
+	
 	return L[m][n];
 }
 
@@ -70,7 +78,10 @@ int main()
 
 	int m = strlen(str1);
 	int n = strlen(str2);
-
+	
+//	char str1[100]="AGGTAB", str2[100]="GXTXAYB";
+//	int m=strlen(str1),n=strlen(str2);
+	
 	printf("\t> Length of LCS is %d.", lcs( str1, str2, m, n ) );
 
 	

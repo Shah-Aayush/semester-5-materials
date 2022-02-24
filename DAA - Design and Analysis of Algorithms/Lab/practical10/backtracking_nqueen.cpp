@@ -6,7 +6,7 @@ DAA Practical 10(B)		| N-Queen using Backtracking
 
 /* Program to solve N Queen Problem using backtracking */
 
-#define N 5
+#define N 4
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -92,11 +92,15 @@ solutions, this function prints one of the
 feasible solutions.*/
 bool solveNQ()
 {
-	int board[N][N] = { { 0, 0, 0, 0, 0},
-						{ 0, 0, 0, 0, 0},
-						{ 0, 0, 0, 0, 0},
-						{ 0, 0, 0, 0, 0},
-						{ 0, 0, 0, 0, 0} };
+//	int board[N][N] = { { 0, 0, 0, 0, 0},
+//						{ 0, 0, 0, 0, 0},
+//						{ 0, 0, 0, 0, 0},
+//						{ 0, 0, 0, 0, 0},
+//						{ 0, 0, 0, 0, 0} };
+	int board[N][N] = { { 0, 0, 0, 0},
+						{ 0, 0, 0, 0},
+						{ 0, 0, 0, 0},
+						{ 0, 0, 0, 0} };
 
 	if (solveNQUtil(board, 0) == false) {
 		printf("Solution does not exist");

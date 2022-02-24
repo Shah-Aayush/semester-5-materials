@@ -107,5 +107,4 @@ int main() {
 	//	printArray(arrForSelectionSort, n);
 	
 	return 0;
-	return 0;
 }

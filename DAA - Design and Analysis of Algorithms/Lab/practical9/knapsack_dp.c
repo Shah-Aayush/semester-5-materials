@@ -18,34 +18,34 @@ DAA Practical 9   | Knapsack using Dynamic Programming
 #define M(i, j)           M[ (i)*(w+1) + (j) ]
 #define max(a, b)         (((a) > (b)) ? (a) : (b))
 
-void printm(const char *name,
-            const int *a,
-            const int lda,
-            const int m,
-            const int n)
-{
-    const int len = strlen(name) + 1;
-    const int mid = m / 2;
-
-    INDENT(len);
-    printf("/ ");
-
-    for( int i=0 ; i<n ; i++ ) printf("      ");
-    printf(" \\\n");
-    for (int i=0 ; i<m ; i++) {
-        if ( i == mid ) printf("%s ", name);
-        else INDENT(len);
-        printf("| ");
-        for (int j=0 ; j<n ; j++) {
-            printf("%5d ", INDEX(a,i,j,lda));
-        }
-        printf(" |\n");
-    }
-    INDENT(len);
-    printf("\\ ");
-    for( int i=0 ; i<n ; i++ ) printf("      ");
-    printf(" /\n");
-}
+//void printm(const char *name,
+//          const int *a,
+//          const int lda,
+//          const int m,
+//          const int n)
+//{
+//  const int len = strlen(name) + 1;
+//  const int mid = m / 2;
+//
+//  INDENT(len);
+//  printf("/ ");
+//
+//  for( int i=0 ; i<n ; i++ ) printf("      ");
+//  printf(" \\\n");
+//  for (int i=0 ; i<m ; i++) {
+//      if ( i == mid ) printf("%s ", name);
+//      else INDENT(len);
+//      printf("| ");
+//      for (int j=0 ; j<n ; j++) {
+//          printf("%5d ", INDEX(a,i,j,lda));
+//      }
+//      printf(" |\n");
+//  }
+//  INDENT(len);
+//  printf("\\ ");
+//  for( int i=0 ; i<n ; i++ ) printf("      ");
+//  printf(" /\n");
+//}
 
 int knapsack01(const int w,
                const int *weights,
@@ -74,7 +74,7 @@ int knapsack01(const int w,
 
     int max_loot = M( n, w );
 
-    printm("Memoization Table Entries ==> ", M, w+1, n+1, w+1);
+//  printm("Memoization Table Entries ==> ", M, w+1, n+1, w+1);
     
     int res = max_loot;
     int w_remaining = w;
@@ -114,18 +114,24 @@ int main()
 //  int weights[] = {2, 3, 4, 5};
 //  int value[]   = {1, 2, 5, 6};
     
-    int n,w;
-    printf("Enter number of objects : ");
-    scanf("%d",&n);
-    int weights[n],value[n];
-    printf("Enter maximum weight capacity : ");
-    scanf("%d",&w);
-    for(int i=0;i<n;i++){
-        printf("\n\tEnter weight of item %d : ", i+1);
-        scanf("%d",&weights[i]);
-        printf("\tEnter value  of item %d : ", i+1);
-        scanf("%d",&value[i]);
-    }
+    int value[] = {60,100,120}; //values
+	int weights[] = {10, 20, 30 }; //weights
+	int n = sizeof(value)/sizeof(value[0]);
+	int w = 50;
+    
+//  int n,w;
+//  printf("Enter number of objects : ");
+//  scanf("%d",&n);
+//  int weights[n],value[n];
+//  printf("Enter maximum weight capacity : ");
+//  scanf("%d",&w);
+//  for(int i=0;i<n;i++){
+//      printf("\n\tEnter weight of item %d : ", i+1);
+//      scanf("%d",&weights[i]);
+//      printf("\tEnter value  of item %d : ", i+1);
+//      scanf("%d",&value[i]);
+//  }
+    
     printf("\n\t> Maximum Possible Loot : %d\n\n", knapsack01(w, weights, value, n));
     return 0;
 }

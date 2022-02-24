@@ -43,17 +43,18 @@ int main()
 {
 //	int arr[] = { 1, 2, 3, 4 };		//=>18
 //	int arr[] = { 1, 2, 3, 4, 3 };		//=>30
-//	int n = sizeof(arr) / sizeof(arr[0]);
+	int arr[] = { 40,20,30,10,30 };		//=>26000
+	int n = sizeof(arr) / sizeof(arr[0]);
 
-	int n;
-	printf("Enter number of matrices : ");
-	scanf("%d",&n);
-	n++;
-	int arr[n];
-	printf("Enter %d elements : ",n);
-	for(int i=0;i<n;i++){
-		scanf("%d",&arr[i]);
-	}
+//	int n;
+//	printf("Enter number of matrices : ");
+//	scanf("%d",&n);
+//	n++;
+//	int arr[n];
+//	printf("Enter %d elements : ",n);
+//	for(int i=0;i<n;i++){
+//		scanf("%d",&arr[i]);
+//	}
 	memset(dp, -1, sizeof dp);
 	printf("\t> Given matrices : ");
 	for(int i=1;i<n;i++){
